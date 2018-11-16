@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Phonebook!</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="javascripts/contacts.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="icon" href="images/phone_book.png">
+    <script>
+        function show(shown, hidden) {
+            document.getElementById(shown).style.display = 'block';
+            document.getElementById(hidden).style.display = 'none';
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="insert">
+        <h1 style="text-align: center;">Phonebook!</h1>
+        <form id="contactForm" action="">
+            <label for="name">Name: </label><input class="input" type="text" id="name" placeholder="Name"><br><br>
+            <label for="phone">Phone Number: </label><input class="input" type="text" id="phone" placeholder="XXX-XXX-XXXX"><br><br>
+            <label for="email">Email: </label><input class="input" type="text" id="email" placeholder="example@example.com"><br><br>
+            <label for="address">Address: </label><input class="input" type="text" id="address" placeholder="Address"><br><br>
+        </form>
+        <form id="queryForm" action="">
+            <label for="contact">Query: </label><input class="input" type="text" id="query" placeholder="Query"><br><br>
+        </form>
+
+        <button class="button" id="postContact">Post Contacts</button>
+        <button class="button" id="getContacts">Get Contacts</button>
+        <button class="button" id="deleteContacts">Delete All</button>
+        <a href="#" onclick="return show('show','insert');">View contacts</a>
+    </div>
+    <div id="show" style="display:none">
+
+        <div class="hide" id="json"></div>
+        <div class="hide" id="done"></div>
+        <div id="contacts"></div>
+        <a href="#" onclick="return show('insert','show');">Insert contacts</a>
+    </div>
+</body>
+
+</html>
